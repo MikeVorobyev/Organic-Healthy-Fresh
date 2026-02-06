@@ -102,6 +102,8 @@ const CustomerReviewCard = ({ darkTheme }) => {
                     v.classList.add(styles.animate_index_4)
                     paramsSlider(v, 70, 100, zIndexReview - 2)
                     break
+                default: 
+                    break
             }
         
             if(v.id >= 2) {                                    // Здесь, игнорируя 2 первых кнопки, мы, при клике по кнопке, увеличиваем индекс, а затем записываем в новый  
@@ -144,10 +146,12 @@ const CustomerReviewCard = ({ darkTheme }) => {
                     paramsSlider(v, 70, 100, zIndexReview - 2)
                     break
 
-
                 case 2 :
                     v.classList.add(styles.reverse_animate_index_2)
                     paramsSlider(v, 85, 50, zIndexReview - 1)
+                    break
+
+                default: 
                     break
             }
         
