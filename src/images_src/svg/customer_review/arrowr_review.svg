@@ -1,0 +1,8 @@
+<svg>
+	<symbol id="arrowr_review_ID" width="61" height="61" viewBox="0 0 61 61" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<circle id="arrowr_review_ellipse_1_ID" r="30.5" transform="matrix(-1 0 0 1 30.5 30.5)" fill="currentColor" fill-opacity="1"/>
+		<circle id="arrowr_review_ellipse_2_ID" r="30" transform="matrix(-1 0 0 1 30.5 30.5)" stroke="currentColor" stroke-opacity="1" stroke-width="0"/>
+
+		<path id="arrowr_review_vector_ID" d="M32.83 22.5L34.83 24.49L28.34 31L34.83 37.5L32.83 39.5L24.33 31L32.83 22.5Z" fill="currentColor" fill-opacity="1" fill-rule="nonzero"/>
+	</symbol>
+</svg>

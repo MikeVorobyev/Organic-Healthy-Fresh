@@ -1,0 +1,483 @@
+@import url('../../fonts/fonts.scss');
+@import url('../../scss/colors.scss');
+
+:root {
+    --z-index-slider : 1; // Значение берется из JS(Оно равно количеству слайдов + 100)
+}
+
+.customerReview_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px 0 200px 0;
+
+    .title {
+        font-size: 70px;
+        line-height: 0;
+        font-family: 'poppins bold';
+        padding-bottom: 30px;
+
+        @media (max-width: 950px) {
+            font-size: calc(7vw);
+        }
+
+        @media (max-width: 550px) {
+            font-size: 35px;
+            line-height: 1.2;
+            width: 200px;
+            text-align: center;
+            margin: 0;
+        }
+    }
+}
+
+.title,
+.review_text {
+    color: rgb(2, 40, 63);
+}
+
+.title.dark,
+.review_text.dark {
+    color: white;
+}
+
+.subtitle {
+    color: rgba(2, 40, 63, 0.64);
+}
+
+.wrapper {
+    position: relative;
+    border-radius: 65px;
+    width: 825px;
+    height: 370px;
+
+    .arrow_prev,
+    .arrow_next {
+        position: absolute;
+        padding: 0;
+        z-index: calc(var(--z-index-slider) + 10); // Прибавляем 10 к z-index самого верхнего слайда, чтобы кнопки всегда были выше по оси z
+        bottom: 50%;
+        width: 61px;
+        height: 61px;
+        background-color: rgba(2, 40, 63, 0);
+        border: none;
+        outline: none;
+
+        .arrow_prev_SVG,
+        .arrow_next_SVG {
+           color: rgba(0, 0, 0, 0);
+        }
+
+        .arrow_prev_ellipse_1,
+        .arrow_prev_vector,
+        .arrow_next_ellipse_1,
+        .arrow_next_vector {
+            color: #FDB827;
+            transition: .2s;
+        }
+
+        .arrow_prev_ellipse_2,
+        .arrow_next_ellipse_2 {
+            fill: rgb(255, 255, 255);
+            transition: .2s;
+        }
+
+        .arrow_prev_ellipse_1.dark,
+        .arrow_prev_vector.dark,
+        .arrow_next_ellipse_1.dark,
+        .arrow_next_vector.dark {
+            color: var(--blue-color-bg-2);
+        }
+
+        @media (max-width: 600px) {
+            width: 50px;
+        }
+
+        @media (max-width: 550px) {
+            width: 45px;
+        }
+
+        @media (max-width: 550px) {
+            width: 40px;
+        }
+
+        @media (max-width: 350px) {
+            width: 35px;
+        }
+    }
+// ================= ARROW HOVER AND ACTIVE START ============================
+    .arrow_prev:active,
+    .arrow_next:active {
+
+        .arrow_prev_ellipse_2,
+        .arrow_next_ellipse_2 {
+            fill: #FDB827;
+        }
+
+        .arrow_prev_ellipse_1,
+        .arrow_prev_vector,
+        .arrow_next_ellipse_1,
+        .arrow_next_vector {
+            color: white;
+        }
+    }
+
+    .arrow_prev.dark:active,
+    .arrow_next.dark:active {
+
+        .arrow_prev_ellipse_2,
+        .arrow_next_ellipse_2 {
+            fill: var(--blue-color-bg-2)
+        }
+
+        .arrow_prev_ellipse_1,
+        .arrow_next_ellipse_1 {
+            color: var(--blue-color-bg-2);
+        }
+    }
+// ================= ARROW HOVER AND ACTIVE END ============================   
+
+    .arrow_prev {
+        left: 0;
+        transform: translateX(-50%) translateY(50%);
+
+        @media (max-width: 550px) {
+            transform: translateX(-40%) translateY(50%);
+        }
+
+        @media (max-width: 400px) {
+            transform: translateX(-30%) translateY(50%);
+        }
+    }
+
+    .arrow_next {
+        right: 0;
+        transform: translateX(50%) translateY(50%) rotate(180deg);
+
+        @media (max-width: 550px) {
+            transform: translateX(40%) translateY(50%) rotate(180deg);
+        }
+
+        @media (max-width: 400px) {
+            transform: translateX(30%) translateY(50%) rotate(180deg);
+        }
+    }
+
+    .card_wrapper {
+        position: absolute;
+        background-color: white;
+        border-radius: 65px;
+        width: 825px;
+        height: 370px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 40px;
+        box-shadow: 0px 2px 100px 0px rgba(0, 0, 0, 0.089);
+    
+        .card_inner {
+           
+            .review_text {
+                max-width: 600px;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.7;
+                margin: 0;
+                padding: 0 20px 40px 20px;
+
+                @media (max-width: 950px) {
+                    font-size: calc(2.25vw);
+                }
+
+                @media (max-width: 700px) {
+                    font-size: calc(2.7vw);
+                    line-height: 1.5;
+                }
+
+                @media (max-width: 600px) {
+                    width: calc(65vw);
+                    padding: 0 0px 40px 0px;
+                }
+
+                @media (max-width: 500px) {
+                    font-size: calc(3vw);
+                }
+
+                @media (max-width: 450px) {
+                    font-size: calc(3.7vw);
+                    width: calc(60vw);
+                }
+
+                @media (max-width: 400px) {
+                    font-size: calc(3.7vw);
+                    width: calc(55vw);
+
+                    padding-bottom: 20px;
+                }
+
+                @media (max-width: 350px) {
+                    font-size: calc(4.3vw);
+                }
+            }
+       
+            .user_information {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+    
+                .image_wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 100%;
+                    overflow: hidden;
+    
+                    .image {
+                        width: 130%;
+                    }
+
+                    @media (max-width: 550px) {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    @media (max-width: 450px) {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+                    
+                .name_surname_wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .name_surname {
+                        font-size: 18px;
+                        line-height: 1.7;
+                        margin: 0;
+                        font-family: 'poppins bold';
+                        color: rgba(2, 40, 63, 0.79);
+
+                        @media (max-width: 550px) {
+                            font-size: 16px;
+                        }
+               
+                        @media (max-width: 450px) {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .name_surname.dark {
+                        color: white;
+                    }
+            
+                    .subtitle {
+                        font-size: 18px;
+                        line-height: 1.7;
+                        margin: 0;
+                        font-family: 'poppins regular';
+
+                        @media (max-width: 550px) {
+                            font-size: 16px;
+                        }
+
+                        @media (max-width: 450px) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                @media (max-width: 400px) {
+                    gap: 10px;
+                }
+            }
+
+            @media (max-width: 400px) {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 950px) { // card_wrapper
+            width: calc(80vw);
+        }
+
+        @media (max-width: 450px) {
+            height: 320px;
+        }
+    }
+
+    .card_wrapper.dark {
+        background-color: var(--dark-color-bg-2);
+        box-shadow: 0px 2px 50px 0px rgba(255, 255, 255, 0.062);
+    } 
+    
+    .subtitle.dark {
+        color: var(--text-dark-theme-gray);
+    }
+
+    @media (max-width: 950px) { // wrapper
+        width: calc(80vw);
+    }
+
+    @media (max-width: 450px) {
+        height: 320px;
+    }
+}
+
+// ======================================================================== SLIDER ANIMATE START ======================================================================================
+// --------------------------------- Animation slider START -----------------------------
+.animate_index_1 {
+    animation: animate_index_1 1.5s ease-in-out;
+}
+
+@keyframes animate_index_1 {
+    0% {
+        transform: translateY(0px);
+        scale: 100%;
+        z-index: var(--z-index-slider); // Значение берется из JS
+    }
+
+    50% {
+        transform: translateY(-400px);
+        scale: 100%;
+    }
+
+    55% { 
+        z-index: 1;
+    }
+
+    99% {
+        scale: 70%;
+    }
+
+    100% {
+        transform: translateY(0px);
+        scale: 0%;
+        z-index: 1;
+    }
+}
+
+.animate_index_2 {
+    animation: animate_index_2 1s ease-in-out;
+}
+
+@keyframes animate_index_2 {
+    0% {
+        scale: 85%;
+        top: 50px;
+    }
+
+    100% {
+        scale: 100%;
+        top: 0px; 
+    }
+}
+
+.animate_index_3 {
+    animation: animate_index_3 1.5s ease-in-out;
+}
+
+@keyframes animate_index_3 {
+    0% {
+        scale: 70%;
+        top: 100px;
+    }
+
+    100% {
+        scale: 85%;
+        top: 50px;
+    }
+}
+
+.animate_index_4 {
+    animation: animate_index_4 1.6s ease-in-out;
+}
+
+@keyframes animate_index_4 {
+    0% {
+        scale: 0%;
+        top: 0px;
+    }
+
+    100% {
+        scale: 70%;
+        top: 100px; 
+    }
+}
+// --------------------------------- Animation slider END ---------------------------------------
+
+// ------------------------------ Reverse animation slider START --------------------------------
+.reverse_animate_index_1 {
+    animation: reverse_animate_index_1 1.5s ease-in-out;
+}
+
+
+@keyframes reverse_animate_index_1 {
+    0% {
+        transform: translateY(150px);
+        scale: 70%;
+        z-index: var(--z-index-slider - 2);
+    }
+
+    50% {
+        transform: translateY(550px);
+        scale: 70%;
+        z-index: var(--z-index-slider - 2);
+    }
+
+    55% { 
+        z-index: var(--z-index-slider);
+    }
+
+    100% {
+        transform: translateY(0px);
+        scale: 100%;
+        z-index: var(--z-index-slider);
+        top: 0px; 
+    }
+}
+
+.reverse_animate_index_2 {
+    animation: reverse_animate_index_2 1.5s ease-in-out;
+}
+
+@keyframes reverse_animate_index_2 {
+    0% {
+        scale: 100%;
+        top: 0px; 
+    }
+
+    100% {
+        scale: 85%;
+        top: 50px;
+    }
+}
+
+.reverse_animate_index_3 {
+    animation: reverse_animate_index_3 1s ease-in-out;
+}
+
+@keyframes reverse_animate_index_3 {
+    0% {
+        scale: 85%;
+        top: 50px;
+    }
+
+    100% {
+        scale: 70%;
+        top: 100px;
+    }
+}
+// --------------------------------- Reverse animation slider END -----------------------------
+// ======================================================================== SLIDER ANIMATE END ======================================================================================
+

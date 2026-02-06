@@ -1,0 +1,287 @@
+@import url('../fonts/fonts.scss');
+@import url('../scss/colors.scss');
+
+ul { 
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+.footer_wrapper {
+    .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 150px 0 100px 0;
+        border-bottom: solid 1px rgba(196, 196, 196, 0.466);
+
+        .social {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .social_logo {
+                font-size: 30px;
+                font-family: 'poppins semiBold';
+                line-height: 0;
+                margin: 0;
+                margin-bottom: 10px;
+                color: var(--footer-blue-text);
+        
+                span {
+                    color: var(--orange-color);
+                }
+
+                @media (max-width: 360px) {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .social_logo.dark {
+                color: white;
+            }
+
+            .social_description {
+                color: var(--footer-gray-text);
+                line-height: 28px;
+                font-size: 17px;
+                font-family: 'sofia-pro regular';
+                width: 300px;
+
+                @media (max-width: 360px) {
+                    font-size: 15px;
+                    line-height: 1.5;
+                    width: 200px;
+                }
+            }
+
+            .social_description.dark {
+                color: var(--text-dark-theme-gray);
+            }
+
+            .social_icons {
+                display: flex;
+                gap: 10px;
+                height: 30px;
+
+                .dzen {
+                    width: 30px;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+    
+                    .dzen_background {
+                        color: #202220;
+                    }
+    
+                    .dzen_star {
+                        color: white;
+                    }
+    
+                    .dzen_background.dark {
+                        color: white;
+                    }
+    
+                    .dzen_star.dark {
+                        color: #202022;
+                    }
+                }
+    
+                .dzen:hover {
+                    scale: 110%;
+                    transform: rotate(10deg);
+                }
+    
+                .rutube_background_wraper {
+                    background-color: #100943;
+                    border-radius: 25%;
+                    width: 30px;
+                    height: 30px;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+    
+                    .rutube {
+                        width: 30px;
+    
+                        .rutube_circle {
+                            color: #ED143B;
+                        }
+    
+                        .rutube_letter {
+                            color: white;
+                        }
+                    }
+                }
+    
+                .rutube_background_wraper:hover {
+                    scale: 110%;
+                    transform: rotate(10deg);
+                }
+    
+                .rutube_background_wraper.dark {
+                    background-color: white;
+    
+                    .rutube_letter.dark {
+                        color: #100943;
+                    }
+                }
+
+                .vkontakte {
+                    width: 30px;
+                    transition: 0.3s ease;
+                }
+
+                .vkontakte:hover {
+                    scale: 110%;
+                    transform: rotate(10deg);
+                }
+
+                .telegram {
+                    width: 30px;
+                    transition: 0.3s ease;
+                }
+
+                .telegram:hover {
+                    scale: 110%;
+                    transform: rotate(10deg);
+                }
+
+                .tiktok {
+                    color: black;
+                    width: 39px;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        scale: 110%;
+                        transform: rotate(10deg);
+                    }
+                }
+
+                .tiktok_black_letter {
+                    color: rgb(0, 0, 0);
+                }
+
+                .tiktok.dark {
+                    color: white;
+                }
+            }
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            .title {
+                font-size: 18px;
+                font-family: 'poppins semiBold';
+                line-height: 0;
+                padding-bottom: 40px;
+                margin: 0;
+                color: var(--footer-blue-text);
+            }
+
+            .title.dark {
+                color: white;
+            }
+        
+            .links {
+                font-size: 17px;
+                font-family: 'sofia-pro regular';
+                color: var(--footer-gray-text);
+                cursor: pointer;
+            }
+
+            .links.dark {
+                color: var(--text-dark-theme-gray);
+            }
+
+            li:not(:last-child) {
+                padding-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 0.5fr;
+            row-gap: 70px;
+            margin: 0 auto;
+            padding: 100px 0 50px 0;
+            
+            grid-template-areas:
+                "community contact"
+                "social about";
+
+            .column {
+                text-align: center;  
+                justify-content: space-between;
+
+                li:last-child {
+                    line-height: 1;
+                }
+            }
+
+            .community {
+                grid-area: community;
+            }
+            .about {
+                grid-area: about;
+            }
+            .contact {
+                grid-area: contact;
+            }
+
+            .social {
+                text-align: center;
+                align-items: center;
+                grid-area: social;
+            }
+        }
+
+        @media (max-width: 660px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+            "about"
+            "community"
+            "contact"
+            "social";
+
+            .column {
+                .title {
+                    padding-bottom: 30px;
+                }
+            
+                .links {
+                    font-size: 14px;
+                }
+    
+                li:not(:last-child) {
+                    padding-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .row.dark {
+        border-bottom: solid 1px rgba(196, 196, 196, 0.137);
+    }
+    
+    .all_rights_reserved {
+        font-size: 18px;
+        font-family: 'poppins regular';
+        color: rgb(55, 84, 101);
+        text-align: center;
+        padding: 40px 0 40px 0;
+
+        @media (max-width: 360px) {
+            font-size: 15px;
+            padding: 20px 0 20px 0;
+        }
+    }
+
+    .all_rights_reserved.dark {
+        color: white;
+    }
+}
+
+

@@ -1,0 +1,66 @@
+@import url('../fonts/fonts.scss');
+@import url('../scss/colors.scss');
+
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1920px;
+    font-family: 'sofia-pro regular';
+    overflow-x:hidden;
+}
+
+.wrapper__color_header {
+    background: linear-gradient(to right, var(--light-color-bg) 63.5%, var(--orange-color-bg) 36.5%);
+}
+
+.wrapper__color_header.dark {
+    background: linear-gradient(to right, var(--dark-color-bg) 63.5%, var(--blue-color-bg) 36.5%);
+}
+
+.wrapper__color_featured_product {
+    background: rgb(253, 253, 253);
+}
+
+.wrapper__color_featured_product.dark {
+    background: var(--dark-color-bg-2);
+}
+
+.wrapper__color_how_it_works {
+    background: var(--light-color-bg);
+}
+
+.wrapper__color_how_it_works.dark {
+    background: var(--dark-color-bg);
+}
+
+.wrapper__color_about_us {
+    background: rgb(253, 253, 253);
+}
+
+.wrapper__color_about_us.dark {
+    background: var(--dark-color-bg-2);
+}
+
+.wrapper__color_customer_review {
+    background: #FFF9F2;
+}
+
+.wrapper__color_customer_review.dark {
+    background: var(--dark-color-bg);
+}
+
+.wrapper__color_footer {
+    background: rgb(253, 253, 253);
+}
+
+.wrapper__color_footer.dark {
+    background: var(--dark-color-bg-2);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 0 20px 0 20px;
+    // border: solid 2px rgba(255, 0, 0, 0.589);
+    color: var(--green-darc-color);
+}
